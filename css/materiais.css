@@ -1,0 +1,318 @@
+/* Pagina de materiais: usa as variaveis e componentes do style.css */
+.pg {
+    padding: calc(66px + clamp(2rem, 6vw, 4rem)) 0 clamp(2.5rem, 7vw, 4.5rem);
+    background: radial-gradient(rgba(20, 18, 31, .18) 1.5px, transparent 1.6px) 0 0/24px 24px, var(--paper);
+    border-bottom: var(--b)
+}
+
+.pg h1 {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    margin-bottom: 1rem
+}
+
+.pg h1 span {
+    color: var(--blue);
+    text-shadow: 3px 3px 0 var(--ink)
+}
+
+.pg .lead {
+    margin: 0 0 .5rem
+}
+
+.crumb {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+    font-size: .9rem;
+    text-decoration: none;
+    background: #fff;
+    border: var(--b);
+    border-radius: 999px;
+    padding: .3rem 1rem;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform .15s, box-shadow .15s
+}
+
+.crumb:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+    background: var(--mint)
+}
+
+.mat {
+    padding: clamp(2.5rem, 7vw, 4.5rem) 0;
+    border-bottom: var(--b)
+}
+
+.mgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem
+}
+
+.mc {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: var(--b);
+    border-radius: 22px;
+    box-shadow: var(--sh);
+    overflow: hidden;
+    position: relative;
+    transition: transform .2s, box-shadow .2s
+}
+
+.mc.in:hover {
+    transform: translate(-4px, -6px) rotate(-.8deg);
+    box-shadow: 10px 12px 0 var(--ink)
+}
+
+.mc .pic {
+    background: var(--sky);
+    border-bottom: var(--b);
+    display: grid;
+    place-items: center;
+    padding: 1rem 1rem 0;
+    overflow: hidden
+}
+
+.mc:nth-of-type(2) .pic {
+    background: var(--pink)
+}
+
+.mc:nth-of-type(3) .pic {
+    background: var(--mint)
+}
+
+.mc:nth-of-type(4) .pic {
+    background: var(--yel)
+}
+
+.mc:nth-of-type(5) .pic {
+    background: var(--sky)
+}
+
+.mc:nth-of-type(6) .pic {
+    background: var(--pink)
+}
+
+.mc:nth-of-type(7) .pic {
+    background: var(--mint)
+}
+
+.mc:nth-of-type(8) .pic {
+    background: var(--yel)
+}
+
+.mgrid>.mc:last-child:nth-child(3n+2) {
+    grid-column: 2
+}
+
+.mc img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    transition: transform .3s;
+    filter: drop-shadow(0 10px 10px rgba(20, 18, 31, .25))
+}
+
+.mc.in:hover img {
+    transform: scale(1.06) rotate(-2deg)
+}
+
+.mc .bd {
+    padding: 1.3rem 1.4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    flex: 1
+}
+
+.mc h2 {
+    all: unset;
+    display: block;
+    font: 800 1.25rem/1.2 Montserrat, sans-serif;
+    letter-spacing: -.02em
+}
+
+.mc p {
+    font-size: .95rem;
+    font-weight: 500
+}
+
+.src {
+    align-self: flex-start;
+    font-weight: 800;
+    font-size: .78rem;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: .05rem .75rem
+}
+
+.mc .btn {
+    margin-top: auto;
+    text-align: center;
+    padding: .75rem 1.2rem;
+    font-size: 1rem;
+    box-shadow: 4px 4px 0 var(--ink)
+}
+
+.mc .btn:hover {
+    box-shadow: 7px 7px 0 var(--ink)
+}
+
+/* card principal (nosso PDF) */
+.mc.main {
+    grid-column: 1/-1;
+    flex-direction: row;
+    background: var(--yel);
+    box-shadow: 10px 10px 0 var(--ink)
+}
+
+.mc.main .pic {
+    flex: 0 0 42%;
+    background: var(--blue);
+    border-bottom: 0;
+    border-right: var(--b);
+    padding: 1.5rem 1.5rem 0
+}
+
+.mc.main img {
+    max-width: 380px
+}
+
+.mc.main .bd {
+    padding: 2rem 2.2rem;
+    justify-content: center;
+    gap: .9rem
+}
+
+.mc.main h2 {
+    font-size: clamp(1.7rem, 4vw, 2.5rem)
+}
+
+.mc.main p {
+    font-size: 1.05rem;
+    font-weight: 600
+}
+
+.mc.main .btn {
+    align-self: flex-start;
+    margin-top: .4rem;
+    background: var(--ink);
+    color: #fff;
+    box-shadow: 6px 6px 0 var(--blue);
+    padding: .95rem 2rem;
+    font-size: 1.1rem
+}
+
+.mc.main .btn:hover {
+    background: var(--blue);
+    box-shadow: 9px 9px 0 var(--ink)
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem
+}
+
+.tg {
+    font-weight: 800;
+    font-size: .8rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    border: var(--b);
+    border-radius: 999px;
+    padding: .2rem .9rem;
+    background: #fff;
+    box-shadow: 3px 3px 0 var(--ink)
+}
+
+.tg.top {
+    background: var(--pink);
+    transform: rotate(-2deg);
+    animation: bob2 2.4s ease-in-out infinite
+}
+
+@keyframes bob2 {
+    50% {
+        transform: rotate(2deg) translateY(-3px)
+    }
+}
+
+.mc.main .ribbon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    background: var(--pink);
+    font: 800 .85rem Figtree, sans-serif;
+    letter-spacing: .05em;
+    border: var(--b);
+    border-radius: 999px;
+    padding: .25rem 1rem;
+    box-shadow: 3px 3px 0 var(--ink);
+    transform: rotate(-3deg)
+}
+
+.mnote {
+    margin-top: 2rem;
+    font-weight: 600;
+    font-size: .9rem;
+    max-width: 62ch
+}
+
+@media(max-width:900px) {
+    .mgrid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .mgrid>.mc:last-child:nth-child(3n+2) {
+        grid-column: 1/-1;
+        max-width: calc(50% - .8rem);
+        justify-self: center
+    }
+
+    .mc.main {
+        flex-direction: column
+    }
+
+    .mc.main .pic {
+        flex: none;
+        border-right: 0;
+        border-bottom: var(--b)
+    }
+
+    .mc.main img {
+        max-width: 320px
+    }
+}
+
+@media(max-width:620px) {
+    .mgrid {
+        grid-template-columns: 1fr
+    }
+
+    .mgrid>.mc:last-child:nth-child(3n+2) {
+        grid-column: auto;
+        max-width: none
+    }
+
+    .mc.main .bd {
+        padding: 1.4rem
+    }
+
+    .mc.main .btn {
+        align-self: stretch
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .tg.top {
+        animation: none
+    }
+}
